@@ -11,7 +11,7 @@ URL = "https://yandex.ru/images/search?from=tabbar&img_url=http%3A%2F%2Fnational
 
 def show_cols():
     # input of parameters for OpenCV.GaussianBlur
-    c1, c2 = st.columns()
+    c1, c2 = st.columns(2)
     with c1:
         dim = st.number_input("Kernel size:", min_value=1, max_value=99, value=3, step=2)
     with c2:
