@@ -9,8 +9,15 @@ URL = "https://yandex.ru/images/search?from=tabbar&img_url=http%3A%2F%2Fnational
       "17%2F09%2FLL-Blog_Sorens_Kantian-Liberalism_1200-1024x576.jpg&lr=213&pos=12&rpt=simage&text=Kant"
 
 
-def gauss_blur_cv2():
-    #read img
+def show_cols():
+    # input of parameters for OpenCV.GaussianBlur
+    c1, c2 = st.columns()
+    with c1:
+        dim = st.number_input("Kernel size:", min_value=1, max_value=99, value=3, step=2)
+    with c2:
+        sig = st.number_input("Sigma:", min_value=1, max_value=99, value=3, step=2)
+
+    return c1, c2, dim, sig
 
 
 def main():
@@ -29,6 +36,25 @@ def main():
 
     user_img = uploader(st.file_uploader("Upload your image:", type=FILE_TYPES))
     user_url = validate_url(st.text_input(f"Insert url of your image {FILE_TYPES}: ", URL))
+
+    _, gray_image = get_image(user_img, user_url)
+
+    func = st.radio(
+        "Choose your filter:", (
+            "1. OpenCV GaussianBlur",
+            "2. Step by step implementation",
+        ),
+        index=0
+    )
+
+    if func[:1] == "1":
+        c1, c2,dimension, sigma = show_cols()
+
+        res = cv2.GaussianBlur(gray_image, (dimension, dimension), sigma)
+
+        with c2:
+            st.image(res, width=300)
+
 
 
 
