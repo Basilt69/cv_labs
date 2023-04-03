@@ -26,7 +26,7 @@ def normalize(x, mu, sd):
 def gaussian_kernel(size, sigma=1):
     kernel_1d = np.linspace(-(size // 2), size // 2, size)
     for i in range(size):
-        kernel_1d[1] = normalize(kernel_1d[1], 0, sigma)
+        kernel_1d[i] = normalize(kernel_1d[i], 0, sigma)
     kernel_2d = np.outer(kernel_1d.T, kernel_1d.T)
 
     kernel_2d *= 1.0 / kernel_2d.max()
