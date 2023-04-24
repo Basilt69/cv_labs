@@ -6,3 +6,7 @@ streamlit~=1.18.0
 sympy==1.11.1
 
 opencv-python-headless~=4.7.0.72
+
+# plots
+plotly==5.14.1  # https://plotly.com/python/
+matplotlib==3.7.1  # https://matplotlib.org/
