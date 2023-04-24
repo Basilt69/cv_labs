@@ -84,10 +84,10 @@ def bradley_binary(img, t):
     y1[y1 < 0] = 0
     y2[y2 >= rows] = rows - 1
 
-    x1 = x1.astype(np.int)
-    x2 = x2.astype(np.int)
-    y1 = y1.astype(np.int)
-    y2 = y2.astype(np.int)
+    x1 = x1.astype(int)
+    x2 = x2.astype(int)
+    y1 = y1.astype(int)
+    y2 = y2.astype(int)
 
     count = (x2 - x1) * (y2 - y1)
 
