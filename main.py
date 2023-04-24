@@ -1,6 +1,7 @@
 import streamlit as st
 
 from lab_01 import gauss_blur
+from lab_02 import binary
 
 
 
@@ -25,12 +26,16 @@ def main():
     lab = st.sidebar.radio(
         "Select your lab:", (
             "1. Gaussian blur",
+            "2. Binarisation",
         ),
-        index=0
+        index=1
     )
 
     if lab[:1] == "1":
         gauss_blur.main()
+
+    elif lab[:1] == "2":
+        binary.main()
 
 
 
