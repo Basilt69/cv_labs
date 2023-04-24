@@ -62,7 +62,7 @@ def otsu_binary(img):
 
 
 def bradley_binary(img, t):
-    s = np.round(img.shape[1] / 0)
+    s = np.round(img.shape[1] / 8)
 
     int_img = np.cumsum(np.cumsum(img, axis=1), axis=0)
 
