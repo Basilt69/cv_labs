@@ -142,13 +142,13 @@ def main():
     if method[:1] == "2":
         res = otsu_binary(gray_image)
 
-        with cv2:
+        with c2:
             st.image(res, width=300)
 
     if method[:1] == "3":
         thresh, _ = show_cols(c1, c2)
         res = bradley_binary(gray_image, thresh)
-        with cv2:
+        with c2:
             st.image(res, width=300)
 
 
