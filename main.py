@@ -29,8 +29,9 @@ def main():
         "Select your lab:", (
             "1. Gaussian blur",
             "2. Binarisation",
+            "3. Mathematical morphology",
         ),
-        index=1
+        index=2
     )
 
     if lab[:1] == "1":
