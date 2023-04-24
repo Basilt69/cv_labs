@@ -104,7 +104,7 @@ def bradley_binary(img, t):
 
     sums = int_img[f1_y, f1_x] - int_img[f2_y, f2_x] - int_img[f3_y, f3_x] + int_img[f4_y, f4_x]
 
-    out = np.ones(rows * cols, dtype=np.bool)
+    out = np.ones(rows * cols, dtype=bool)
     out[img.ravel() * count <= sums * (100.0 - t) / 100.0] = False
 
     out = 255 * np.reshape(out, (rows, cols)).astype(np.uint8)
