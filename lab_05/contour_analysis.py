@@ -9,7 +9,7 @@ URL_2 = "https://kotikova729153684.files.wordpress.com/2018/12/d182d180d0b5d185d
         ".jpg"
 URL_3 = "https://images.pexels.com/photos/1340382/pexels-photo-1340382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750" \
         "&dpr=2"
-URK = "http://punktum.ru/wp-content/uploads/triangle.jpg"
+URL = "http://punktum.ru/wp-content/uploads/triangle.jpg"
 COLOR = (0, 255, 0)
 
 
