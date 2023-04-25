@@ -4,7 +4,7 @@ from lab_01 import gauss_blur
 from lab_02 import binary
 from lab_03 import math_morph
 from lab_04 import edges
-from lab_05 import counter_analysis
+#from lab_05 import contour_analysis
 
 
 
@@ -33,9 +33,8 @@ def main():
             "2. Binarisation",
             "3. Mathematical morphology",
             "4. Image edges",
-            "5. Counter analysis",
         ),
-        index=4
+        index=3
     )
 
     if lab[:1] == "1":
@@ -50,8 +49,8 @@ def main():
     elif lab[:1] == "4":
         edges.main()
 
-    elif lab[:1] == "5":
-        counter_analysis.main()
+    #elif lab[:1] == "5":
+        #contour_analysis.main()
 
 
 if __name__ == "__main__":
