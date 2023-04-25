@@ -7,7 +7,9 @@ from utils.utils import loader
 PATTERN_URL = "https://img.favpng.com/18/12/25/triangle-blue-shape-png-favpng-GiyVGMhuhVfrT688Zw5x4DGXH.jpg"
 URL_2 = "https://kotikova729153684.files.wordpress.com/2018/12/d182d180d0b5d185d183d0b3d0bed0bbd18cd0bdd0b8d0bad0b81" \
         ".jpg"
-URL = "https://images.pexels.com/photos/1340382/pexels-photo-1340382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+URL_3 = "https://images.pexels.com/photos/1340382/pexels-photo-1340382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750" \
+        "&dpr=2"
+URK = "http://punktum.ru/wp-content/uploads/triangle.jpg"
 COLOR = (0, 255, 0)
 
 
