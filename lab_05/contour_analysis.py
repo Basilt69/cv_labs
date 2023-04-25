@@ -5,7 +5,7 @@ import numpy as np
 from utils.utils import loader
 
 PATTERN_URL = "https://img.favpng.com/18/12/25/triangle-blue-shape-png-favpng-GiyVGMhuhVfrT688Zw5x4DGXH.jpg"
-URL = "https://rus-linux.net/images/soft/pgf/Figure-2-Three-colored-triangles-with-PGFTikZ.png"
+URL = "https://kotikova729153684.files.wordpress.com/2018/12/d182d180d0b5d185d183d0b3d0bed0bbd18cd0bdd0b8d0bad0b81.jpg"
 COLOR = (0, 255, 0)
 
 
@@ -88,7 +88,7 @@ def main():
     st.image(template_edged)
 
     i = 0
-    for scale in np.linespace(1, 2, 20):
+    for scale in np.linspace(1, 2, 20):
         resized = cv2.resize(gray_img, dsize=(0, 0), fx=scale, fy=scale)
 
         r = gray_img.shape[1] / float(resized.shape[1])
