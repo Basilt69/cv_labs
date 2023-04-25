@@ -3,3 +3,5 @@ This repository contains [the following labs](https://basilt69-cv-labs-main-8fp1
 * Gauss blur
 * Binarisation
 * Mathematical morphology
+* Edge detection
+* Contour analysis

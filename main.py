@@ -33,8 +33,9 @@ def main():
             "2. Binarisation",
             "3. Mathematical morphology",
             "4. Image edges",
+            "5. Contour analysis",
         ),
-        index=3
+        index=4
     )
 
     if lab[:1] == "1":
