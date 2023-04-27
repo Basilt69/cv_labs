@@ -5,6 +5,7 @@ import cv2
 from utils.utils import uploader, validate_url, FILE_TYPES, get_image, binary
 from random import choice
 from PIL import Image, ImageChops
+from skimage.metrics import structural_similarity
 
 
 CAPTCHA = [
@@ -58,6 +59,26 @@ def dilate_3(img, k_size=(3,3)):
             prev_itr = curr_itr
             itr += 1
 
+    return prev_itr
+
+
+def dilate_4(img, k_size=(3,3)):
+    kernel = cv2.getStructuringElement(cv2.MORPH_DILATE, ksize=k_size)
+    prev_itr = cv2.dilate(~img, kernel, iterations=1)
+    itr = 1
+    while True:
+        curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
+
+        #compute SSIM between the two images
+        (score, diff) = structural_similarity(prev_itr, curr_itr, full=True)
+        st.markdown(f"Image similarity: {score * 100}%")
+        diff = (diff * 255).astype("uint8")
+        st.markdown(diff)
+        if score == 100.:
+            break
+        else:
+            prev_itr = curr_itr
+            itr += 1
     return prev_itr
 
 
@@ -166,7 +187,7 @@ def main():
         if method == "1":
             k = show_iters()
             #dilate_img = dilate(bin_img, k)
-            dilate_img = dilate_3(bin_img)
+            dilate_img = dilate_4(bin_img)
             st.write("Dilate:")
             st.image(dilate_img, width=300)
 
