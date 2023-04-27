@@ -27,8 +27,8 @@ def dilate_2(img, k_size=(3,3)):
     while True:
         curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
         diff = cv2.sumElems(curr_itr)[0] - cv2.sumElems(prev_itr)[0]
-        st.write("Curr", cv2.sumElems(curr_itr)[0])
-        st.write("Prev", cv2.sumElems(prev_itr)[0])
+        st.write("Curr", cv2.sumElems(curr_itr))
+        st.write("Prev", cv2.sumElems(prev_itr))
         st.write(f"This is diff {diff} after {itr} iteration")
         if diff == 0:
             break
