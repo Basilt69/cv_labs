@@ -75,7 +75,7 @@ def dilate_4(img, k_size=(3,3)):
         st.markdown(round(score * 100,2))
         diff = (diff * 255).astype("uint8")
         #st.markdown(diff)
-        if score == 100.00:
+        if score == 100.0:
             break
         else:
             prev_itr = curr_itr
