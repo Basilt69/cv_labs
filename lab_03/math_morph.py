@@ -21,7 +21,7 @@ def dilate(img, k=5, k_size=(3,3)):
 
 
 def dilate_2(img, k_size=(3,3)):
-    kernel = cv2.getStructuringElement(cv2.MORTH_DILATE, ksize=k_size)
+    kernel = cv2.getStructuringElement(cv2.MORPH_DILATE, ksize=k_size)
     prev_itr = cv2.dilate(~img, kernel, iterations=1)
     itr = 1
     while True:
