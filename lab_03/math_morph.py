@@ -72,7 +72,7 @@ def dilate_4(img, k_size=(3,3)):
         #compute SSIM between the two images
         (score, diff) = structural_similarity(prev_itr, curr_itr, full=True)
         st.markdown(f"Image similarity: {score * 100}%")
-        st.markdown(round(score,2))
+        st.markdown(round(score,5))
         diff = (diff * 255).astype("uint8")
         #st.markdown(diff)
         if score == 100.00:
