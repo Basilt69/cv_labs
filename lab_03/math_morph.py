@@ -187,8 +187,8 @@ def main():
     with c2:
         if method == "1":
             k = show_iters()
-            #dilate_img = dilate(bin_img, k)
-            dilate_img = dilate_4(bin_img)
+            dilate_img = dilate(bin_img, k)
+            #dilate_img = dilate_4(bin_img)
             st.write("Dilate:")
             st.image(dilate_img, width=300)
 
