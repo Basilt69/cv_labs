@@ -49,6 +49,8 @@ def dilate_3(img, k_size=(3,3)):
         #im1 = prev_itr.load()
         #im2 = curr_itr.load()
         #result = ImageChops.difference(im1,im2)
+        st.image(prev_itr)
+        st.image(curr_itr)
         if np.array_equal(prev_itr, curr_itr):
             st.markdown("matches")
             break
