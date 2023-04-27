@@ -35,7 +35,7 @@ def dilate_2(img, k_size=(3,3)):
         else:
             prev_itr = curr_itr
             itr += 1
-    return curr_itr
+    return prev_itr
 
 
 
