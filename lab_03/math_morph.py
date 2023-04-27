@@ -26,7 +26,7 @@ def dilate_2(img, k_size=(3,3)):
     itr = 1
     while True:
         curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
-        sumE = cv2.sumElems(curr_itr)
+        sumE = cv2.sumElems(curr_itr)[0]
         st.write(f"This is diff {sumE} after {itr} iteration")
         '''diff = cv2.sumElems(curr_itr) - cv2.sumElems(prev_itr)
         st.write(f"This is diff {diff} after {itr} iteration")
