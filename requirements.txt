@@ -10,3 +10,4 @@ opencv-python-headless~=4.7.0.72
 # plots
 plotly==5.14.1  # https://plotly.com/python/
 matplotlib==3.7.1  # https://matplotlib.org/
+scikit-image==0.20.0
