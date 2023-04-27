@@ -119,7 +119,7 @@ def bradley_binary(img, t):
     out = np.ones(rows * cols, dtype=bool)
     out[img.ravel() * count <= sums * (100.0 - t) / 100.0] = False
 
-    # also convert back to uibt8
+    # also convert back to uint8
     out = 255 * np.reshape(out, (rows, cols)).astype(np.uint8)
 
     return out

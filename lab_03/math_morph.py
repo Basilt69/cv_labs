@@ -20,6 +20,23 @@ def dilate(img, k=5, k_size=(3,3)):
     return cv2.dilate(~img, kernel, iterations=k)
 
 
+def dilate_2(img, k_size=(3,3)):
+    kernel = cv2.getStructuringElement(cv2.MORTH_DILATE, ksize=k_size)
+    prev_itr = cv2.dilate(~img, kernel, iterations=1)
+    itr = 1
+    while True:
+        curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
+        diff = cv2.sumElems(curr_itr) - cv2.sumElems(prev_itr)
+        st.write(f"This is diff {diff} after {itr} iteration")
+        if diff == 0:
+            break
+        else:
+            prev_itr = curr_itr
+            itr += 1
+    return curr_itr
+
+
+
 def erode(img, k=5, k_size=(3,3)):
     kernel = cv2.getStructuringElement(cv2.MORPH_ERODE, ksize=k_size)
     return cv2.erode(~img, kernel, iterations=k)
@@ -123,7 +140,8 @@ def main():
     with c2:
         if method == "1":
             k = show_iters()
-            dilate_img = dilate(bin_img, k)
+            #dilate_img = dilate(bin_img, k)
+            dilate_img = dilate_2(bin_img)
             st.write("Dilate:")
             st.image(dilate_img, width=300)
 
