@@ -46,10 +46,10 @@ def dilate_3(img, k_size=(3,3)):
     itr = 1
     while True:
         curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
-        im1 = prev_itr.load()
-        im2 = curr_itr.load()
-        result = ImageChops.difference(im1,im2)
-        if result==None:
+        #im1 = prev_itr.load()
+        #im2 = curr_itr.load()
+        #result = ImageChops.difference(im1,im2)
+        if np.array_equal(prev_itr, curr_itr):
             st.markdown("matches")
             break
         else:
