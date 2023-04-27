@@ -93,7 +93,7 @@ def main():
             "1. OpenCV GaussianBlur",
             "2. Step by step implementation",
         ),
-        index=0
+        index=1
     )
 
     if func[:1] == "1":

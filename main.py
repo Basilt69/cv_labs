@@ -5,6 +5,7 @@ from lab_02 import binary
 from lab_03 import math_morph
 from lab_04 import edges
 from lab_05 import contour_analysis
+from lab_06 import key_points
 
 
 
@@ -33,8 +34,9 @@ def main():
             "2. Binarisation",
             "3. Mathematical morphology",
             "4. Image edges",
+            "5. Key points",
         ),
-        index=3
+        index=4
     )
 
     if lab[:1] == "1":
@@ -50,7 +52,7 @@ def main():
         edges.main()
 
     elif lab[:1] == "5":
-        contour_analysis.main()
+        key_points.main()
 
 
 if __name__ == "__main__":
