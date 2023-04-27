@@ -64,10 +64,10 @@ def dilate_3(img, k_size=(3,3)):
 
 def dilate_4(img, k_size=(3,3)):
     kernel = cv2.getStructuringElement(cv2.MORPH_DILATE, ksize=k_size)
-    prev_itr = cv2.dilate(~img, kernel, iterations=1)
+    prev_itr = cv2.dilate(img, kernel, iterations=1)
     itr = 1
     while True:
-        curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
+        curr_itr = cv2.dilate(prev_itr, kernel, iterations=1)
 
         #compute SSIM between the two images
         (score, diff) = structural_similarity(prev_itr, curr_itr, full=True)
