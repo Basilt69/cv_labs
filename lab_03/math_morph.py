@@ -30,6 +30,7 @@ def dilate_2(img, k_size=(3,3)):
         st.write("Curr", cv2.sumElems(curr_itr))
         st.write("Prev", cv2.sumElems(prev_itr))
         st.write(f"This is diff {diff} after {itr} iteration")
+        st.write("New approach", cv2.subtract(curr_itr, prev_itr))
         if diff == 0:
             break
         else:
