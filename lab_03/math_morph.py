@@ -4,6 +4,7 @@ import cv2
 
 from utils.utils import uploader, validate_url, FILE_TYPES, get_image, binary
 from random import choice
+from PIL import Image, ImageChops
 
 
 CAPTCHA = [
@@ -45,6 +46,15 @@ def dilate_3(img, k_size=(3,3)):
     itr = 1
     while True:
         curr_itr = cv2.dilate(~prev_itr, kernel, iterations=1)
+        result = ImageChops.difference(prev_itr,curr_itr)
+        if result==None:
+            st.markdown("matches")
+            break
+        else:
+            prev_itr = curr_itr
+            itr += 1
+
+    return prev_itr
 
 
 
@@ -131,7 +141,7 @@ def main():
             "5. Conditional dilate",
             "6. Skeletoning",
         },
-        index=0
+        index=5
     )[:1]
 
     user_img = uploader(st.file_uploader("Upload image:", type=FILE_TYPES))

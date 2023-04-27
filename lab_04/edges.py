@@ -199,7 +199,7 @@ def main():
             "5. Scharr",
             "6. Laplace",
         ),
-        index=0
+        index=5
     )[:1]
 
     user_img = uploader(st.file_uploader("Upload image:", type=FILE_TYPES))

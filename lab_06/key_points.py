@@ -4,6 +4,7 @@ import cv2
 
 from utils.utils import loader
 
+
 URL = "https://i.ibb.co/QQx07rW/pexels-anna-rye-12043861.jpg"
 COLOR = (0, 255, 0)
 
