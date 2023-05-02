@@ -83,6 +83,24 @@ def dilate_4(img, k_size=(3,3)):
     return prev_itr
 
 
+def dilate_5(img, k_size=(3,3)):
+    img = ~img
+    str_elem1 = cv2.getStructuringElement(cv2.MRTH_ERODE, ksize=k_size)
+
+    eroded_img = cv2.erode(img, str_elem1, iterations=1)
+    minimum = eroded_img
+
+    while True:
+        previous = minimum
+        str_elem2 = cv2.getStructuringElement(cv2.MRTH_DILATE, ksize=k_size)
+        minimum = cv2.dilate(minimum, str_elem2)
+        result = np.minimum(img, minimum)
+        if np.array_equal(result, previous):
+            return result
+        minimum = result
+
+
+
 
 def erode(img, k=5, k_size=(3,3)):
     kernel = cv2.getStructuringElement(cv2.MORPH_ERODE, ksize=k_size)
@@ -188,7 +206,7 @@ def main():
         if method == "1":
             k = show_iters()
             #dilate_img = dilate(bin_img, k)
-            dilate_img = dilate_4(bin_img)
+            dilate_img = dilate_5(bin_img)
             st.write("Dilate:")
             st.image(dilate_img, width=300)
 
