@@ -85,14 +85,14 @@ def dilate_4(img, k_size=(3,3)):
 
 def dilate_5(img, k_size=(3,3)):
     img = ~img
-    str_elem1 = cv2.getStructuringElement(cv2.MRTH_ERODE, ksize=k_size)
+    str_elem1 = cv2.getStructuringElement(cv2.MORTH_ERODE, ksize=k_size)
 
     eroded_img = cv2.erode(img, str_elem1, iterations=1)
     minimum = eroded_img
 
     while True:
         previous = minimum
-        str_elem2 = cv2.getStructuringElement(cv2.MRTH_DILATE, ksize=k_size)
+        str_elem2 = cv2.getStructuringElement(cv2.MORTH_DILATE, ksize=k_size)
         minimum = cv2.dilate(minimum, str_elem2)
         result = np.minimum(img, minimum)
         if np.array_equal(result, previous):
