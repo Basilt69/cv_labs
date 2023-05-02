@@ -87,8 +87,8 @@ def dilate_5(img, k_size=(3,3)):
     img = ~img
     str_elem1 = cv2.getStructuringElement(cv2.MORPH_ERODE, ksize=k_size)
 
-    eroded_img = cv2.erode(img, str_elem1, iterations=1)
-    minimum = eroded_img
+    #eroded_img = cv2.erode(img, str_elem1, iterations=1)
+    minimum = np.minimum(img, cv2.erode(img, str_elem1, iterations=3))
 
     while True:
         previous = minimum
