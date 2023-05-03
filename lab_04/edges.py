@@ -62,11 +62,11 @@ def apply_gradient(grad_x, grad_y, width, height, img, thresh):
 
 def roberts(img, threshold=20):
     width, height = img.shape
-    st.write(type(height))
+    #st.write(type(height))
     max_x = width - 1
     max_y = height - 1
 
-    edge_img = np.zeros(width, int(height))
+    edge_img = np.zeros((width, height))
     img = np.asarray(img, dtype="float64")
 
     for x in range(0, width):
