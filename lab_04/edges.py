@@ -66,7 +66,7 @@ def roberts(img, threshold=20):
     max_x = width - 1
     max_y = height - 1
 
-    edge_img = np.zeros(width, height)
+    edge_img = np.zeros(width, int(height))
     img = np.asarray(img, dtype="float64")
 
     for x in range(0, width):
