@@ -34,9 +34,8 @@ def main():
             "2. Binarisation",
             "3. Mathematical morphology",
             "4. Image edges",
-            "5. Key points",
         ),
-        index=4
+        index=3
     )
 
     if lab[:1] == "1":
