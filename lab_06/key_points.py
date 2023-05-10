@@ -5,7 +5,8 @@ import cv2
 from utils.utils import loader
 
 
-URL = "https://i.ibb.co/QQx07rW/pexels-anna-rye-12043861.jpg"
+#URL = "https://i.ibb.co/QQx07rW/pexels-anna-rye-12043861.jpg"
+URL = "https://medialeaks.ru/wp-content/uploads/2020/05/dmb4vpafuo1ieo256h3t.jpg"
 COLOR = (0, 255, 0)
 
 
@@ -32,7 +33,7 @@ def description():
         Compare the results for all three
     """
 
-    st.markdown("### Laboratory work №6")
+    st.markdown("### Laboratory work №5")
     st.markdown("**Title*:* Key points of an image")
 
     if st.checkbox("Show task"):
